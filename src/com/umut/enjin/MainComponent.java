@@ -63,6 +63,9 @@ public class MainComponent {
                     stop();
 
                 // TODO: Update Game
+                Input.update();
+
+                Time.setDelta(frameTime);
 
                 game.input();
                 game.update();
