@@ -14,6 +14,7 @@ public class MainComponent {
     private boolean isRunning;
 
     public MainComponent(){
+        RenderUtil.initGraphics();
         isRunning = false;
         game = new Game();
     }
@@ -93,6 +94,7 @@ public class MainComponent {
     }
 
     private void render(){
+        RenderUtil.clearScreen();
         game.render();
         Window.render();
     }
