@@ -49,7 +49,7 @@ public class Quaternion {
     }
 
     public float length() {
-        return (float) Math.sqrt(x * x + y*y + z*z + w*w);
+        return (float) Math.sqrt(x*x + y*y + z*z + w*w);
     }
 
     public Quaternion normalize() {

@@ -11,7 +11,7 @@ public class RenderUtil {
     }
 
     public static void initGraphics() {
-        glClearColor(0.5f, 0f, 0f, 0f); // set the clear colors bits
+        glClearColor(0f, 0f, 0f, 0f); // set the clear colors bits
 
         glFrontFace(GL_CW); // determine frontface
         glCullFace(GL_BACK);
@@ -21,5 +21,9 @@ public class RenderUtil {
         // TODO: Depth clamp
 
         glEnable(GL_FRAMEBUFFER_SRGB); // for auto gamma correction
+    }
+
+    public static String getOpenGLVersion() {
+        return glGetString(GL_VERSION);
     }
 }
