@@ -48,29 +48,32 @@ public class MainComponent {
         double unprocessedTime = 0;
 
         while(isRunning) {
+            // calculate the render time of the last frame
             long startTime = Time.getTime();
             long passedTime = startTime - lastTime;
             lastTime = startTime;
 
+            // calculate the time that needs to be processed - displayed
             unprocessedTime += passedTime / (double) Time.SECOND;
-
+            // process loop
             while(unprocessedTime > frameTime) {
                 render = true;
 
                 unprocessedTime -= frameTime;
-                frameCounter += passedTime;
+                frameCounter += passedTime;     // update frame time passed
 
                 if (Window.isCloseRequested())
                     stop();
 
-                // TODO: Update Game
+                // Update game
                 Input.update();
 
-                Time.setDelta(frameTime);
+                Time.setDelta(frameTime); // set Time.deltaTime
 
                 game.input();
                 game.update();
 
+                // print out the frame rate after each second of rendering
                 if(frameCounter >= Time.SECOND) {
                     System.out.println(frames);
                     frames = 0;
@@ -83,7 +86,7 @@ public class MainComponent {
             }
             else {
                 try {
-                    Thread.sleep(1);
+                    Thread.sleep(1); // if not rendering, let the thread sleep
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

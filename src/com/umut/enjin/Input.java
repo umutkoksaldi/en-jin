@@ -151,7 +151,8 @@ public class Input {
     public static void update() {
 
         upKeys.clear();
-
+        // If a key is not pressed now but it was pressed on the last frame, then it is released
+        // making getKeyUp return true
         for (int i = 0; i < NUM_KEYCODES; i++) {
             if(!getKey(i) && currentKeys.contains(i)) {
                 upKeys.add(i);
@@ -159,7 +160,8 @@ public class Input {
         }
 
         downKeys.clear();
-
+        // If a key is pressed now but it was not pressed on the last frame, then it was pressed just now
+        // making getKeyDown return true
         for (int i = 0; i < NUM_KEYCODES; i++) {
             if(getKey(i) && !currentKeys.contains(i)) {
                 downKeys.add(i);
