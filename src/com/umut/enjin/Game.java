@@ -2,9 +2,12 @@ package com.umut.enjin;
 
 import org.lwjgl.input.Keyboard;
 
+import javax.annotation.Resource;
+
 public class Game {
 
     private Mesh mesh;
+    private Shader shader;
 
     public Game() {
         mesh = new Mesh();
@@ -13,6 +16,11 @@ public class Game {
                                         new Vertex(new Vector3f(1,-1,0))
                                         };
         mesh.addVertices(data);
+        shader = new Shader();
+
+        shader.addVertexShader(ResourceLoader.loadShader("basicVertex.vs"));
+        shader.addFragmentShader(ResourceLoader.loadShader("basicFragment.fs"));
+        shader.compileShader();
     }
 
     public void input() {
@@ -32,6 +40,7 @@ public class Game {
     }
 
     public void render() {
+        shader.bind();
         mesh.draw();
     }
 }
