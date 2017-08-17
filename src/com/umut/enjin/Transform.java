@@ -1,5 +1,6 @@
 package com.umut.enjin;
 
+/* Wrapper transform class */
 public class Transform {
 
     private Vector3f translation;
@@ -11,7 +12,9 @@ public class Transform {
     public Vector3f getTranslation() {
         return translation;
     }
-
+    
+    // The method is used to convert the Vector3f values stored inside this class 
+    // into a Matrix4f in order to be compatible with OpenGL functions
     public Matrix4f getTransformation() {
         Matrix4f trans = new Matrix4f().initTranslation(translation.getX(), translation.getY(), translation.getZ());
 
