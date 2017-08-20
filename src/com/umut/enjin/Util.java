@@ -5,6 +5,7 @@ import org.lwjgl.BufferUtils;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
+import java.util.ArrayList;
 
 /* This class prepares the floating point values inside the vector3f of the vertex in order to be loaded into opengl
 IMPORTANT: Upon each modification of the vertex class the createFlippedBuffer method needs to be adjusted otherwise
@@ -51,5 +52,29 @@ public class Util
         buffer.put(values);
         buffer.flip();
         return buffer;
+    }
+
+    public static String[] removeEmptyStrings(String[] data) {
+        ArrayList<String> result = new ArrayList<>();
+
+        for (int i = 0; i < data.length; i++) {
+            if(!data[i].equals(""))
+                result.add(data[i]);
+        }
+
+        String[] res = new String[result.size()];
+        result.toArray(res);
+
+        return res;
+    }
+
+    public static int[] toIntArray(Integer[] data) {
+        int[] result = new int[data.length];
+
+        for(int i = 0; i < result.length; i++) {
+            result[i] = data[i].intValue();
+        }
+
+        return result;
     }
 }

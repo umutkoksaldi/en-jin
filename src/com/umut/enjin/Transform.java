@@ -51,6 +51,13 @@ public class Transform {
         return transformationMatrix.mul(rotationMatrix.mul(scaleMatrix));
     }
 
+    public Matrix4f getProjectedTranformation(){
+
+
+
+        return null;
+    }
+
     public void setTranslation(Vector3f translation) {
         this.translation = translation;
     }

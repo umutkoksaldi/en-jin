@@ -1,5 +1,6 @@
 package com.umut.enjin;
 
+import jdk.management.resource.ResourceContext;
 import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Resource;
@@ -11,18 +12,8 @@ public class Game {
     private Transform transform;
 
     public Game() {
-        mesh = new Mesh();
-        Vertex[] vertices = new Vertex[] {new Vertex(new Vector3f(-1,-1,0)),
-                                        new Vertex(new Vector3f(0,1,0)),
-                                        new Vertex(new Vector3f(1,-1,0)),
-                                        new Vertex(new Vector3f(0, -1, 1))
-                                        };
-        int[] indices = new int[]  {0, 1, 3,
-                                    3, 1, 2,
-                                    2, 1, 0,
-                                    0, 2, 3};
+        mesh = ResourceLoader.loadMesh("cube.obj");
 
-        mesh.addVertices(vertices, indices);
         shader = new Shader();
 
         transform = new Transform();
@@ -55,7 +46,7 @@ public class Game {
 
         transform.setTranslation(sinTemp, 0, 0);
         transform.setRotation(0, sinTemp * 180, 0);
-        // transform.setScale(sinTemp, sinTemp, sinTemp);
+        transform.setScale(0.7f, 0.7f, 0.7f);
     }
 
     public void render() {
