@@ -2,7 +2,9 @@ package com.umut.enjin;
 
 import org.lwjgl.BufferUtils;
 
+import java.nio.Buffer;
 import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 
 /* This class prepares the floating point values inside the vector3f of the vertex in order to be loaded into opengl
 IMPORTANT: Upon each modification of the vertex class the createFlippedBuffer method needs to be adjusted otherwise
@@ -37,6 +39,17 @@ public class Util
 
         buffer.flip();
 
+        return buffer;
+    }
+
+    public static IntBuffer createIntBuffer(int size) {
+        return BufferUtils.createIntBuffer(size);
+    }
+
+    public static IntBuffer createFlippedBuffer(int... values) {
+        IntBuffer buffer = createIntBuffer(values.length);
+        buffer.put(values);
+        buffer.flip();
         return buffer;
     }
 }

@@ -34,6 +34,7 @@ public class Transform {
     public Transform() {
         translation = new Vector3f(0, 0, 0);
         rotation = new Vector3f(0, 0, 0);
+        scale = new Vector3f(1, 1, 1);
     }
 
     public Vector3f getTranslation() {
