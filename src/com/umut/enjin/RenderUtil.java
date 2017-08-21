@@ -10,6 +10,13 @@ public class RenderUtil {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the screen
     }
 
+    public static void setTextures(boolean enabled) {
+        if (enabled)
+            glEnable(GL_TEXTURE_2D);
+        else
+            glDisable(GL_TEXTURE_2D);
+    }
+
     public static void initGraphics() {
         glClearColor(0f, 0f, 0f, 0f); // set the clear colors bits
 
@@ -20,6 +27,7 @@ public class RenderUtil {
 
         // TODO: Depth clamp
 
+        glEnable(GL_TEXTURE_2D);
         glEnable(GL_FRAMEBUFFER_SRGB); // for auto gamma correction
     }
 
