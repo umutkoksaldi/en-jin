@@ -60,10 +60,18 @@ public class ResourceLoader {
                                                         Float.valueOf(tokens[2]),
                                                         Float.valueOf(tokens[3]))));
                 }
+                // ignore additional info such as normals sometimes provided by blender
                 else if (tokens[0].equals("f")) {
-                    indices.add(Integer.parseInt(tokens[1]) - 1);
-                    indices.add(Integer.parseInt(tokens[2]) - 1);
-                    indices.add(Integer.parseInt(tokens[3]) - 1);
+                    indices.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
+                    indices.add(Integer.parseInt(tokens[2].split("/")[0]) - 1);
+                    indices.add(Integer.parseInt(tokens[3].split("/")[0]) - 1);
+
+                    // Triangulation to add an additional face to the mesh
+                    if (tokens.length > 4) {
+                        indices.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
+                        indices.add(Integer.parseInt(tokens[3].split("/")[0]) - 1);
+                        indices.add(Integer.parseInt(tokens[4].split("/")[0]) - 1);
+                    }
                 }
             }
 

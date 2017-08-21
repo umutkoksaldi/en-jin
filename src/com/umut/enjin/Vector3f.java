@@ -54,6 +54,10 @@ public class Vector3f
         return new Vector3f(x_, y_, z_);
     }
 
+    public  Vector3f rotate(float angle, Vector3f axis) {
+        return null;
+    }
+
     public Vector3f add (Vector3f other) {
         return new Vector3f(x + other.getX(), y + other.getY(), z + other.getZ());
     }
