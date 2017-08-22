@@ -14,6 +14,8 @@ public class Vector3f
         this.z = z;
     }
 
+    public Vector3f abs() {return new Vector3f(Math.abs(getX()),Math.abs(getY()), Math.abs(getZ()) );}
+
     public float getX() {
         return x;
     }

@@ -12,6 +12,8 @@ public class Vector2f {
         this.y = y;
     }
 
+    public Vector2f abs() {return new Vector2f(Math.abs(getX()),Math.abs(getY()));}
+
     public float length() {
         return (float) Math.sqrt(x*x + y*y);
     }

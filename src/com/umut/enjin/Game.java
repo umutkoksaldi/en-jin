@@ -11,7 +11,7 @@ public class Game {
     private Shader shader;
     private Transform transform;
     private Camera camera;
-    private Texture texture;
+    private Material material;
 
     public Game() {
         // mesh = ResourceLoader.loadMesh("cube.obj");
@@ -28,19 +28,14 @@ public class Game {
 
         mesh.addVertices(vertices, indices);
 
-        shader = new Shader();
+        material = new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(0, 1, 1));
+        shader = new BasicShader();
         camera = new Camera();
-        texture = ResourceLoader.loadTexture("test.png");
 
         transform = new Transform();
         transform.setProjection(70f, MainComponent.WIDTH, MainComponent.HEIGHT, 0.1f, 1000f);
         Transform.setCamera(camera);
 
-        shader.addVertexShader(ResourceLoader.loadShader("basicVertex.vs"));
-        shader.addFragmentShader(ResourceLoader.loadShader("basicFragment.fs"));
-        shader.compileShader();
-
-        shader.addUniform("transform");
     }
 
     public void input() {
@@ -61,8 +56,7 @@ public class Game {
 
     public void render() {
         shader.bind();
-        shader.setUniform("transform", transform.getProjectedTranformation());
-        texture.bind();
+        shader.updateUniforms(transform.getTransformation(), transform.getProjectedTranformation(), material);
         mesh.draw();
     }
 }
