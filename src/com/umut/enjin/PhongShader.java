@@ -1,22 +1,21 @@
 package com.umut.enjin;
 
 /**
- * Created by umutm on 8/22/2017.
+ * Created by umutm on 8/23/2017.
  */
-public class BasicShader extends Shader
-{
+public class PhongShader extends Shader {
 
-    private static final BasicShader instance = new BasicShader();
+    private static final PhongShader instance = new PhongShader();
 
-    public static BasicShader getInstance() {
-        return  instance;
+    public static PhongShader getInstance() {
+        return instance;
     }
 
-    private BasicShader() {
+    private PhongShader() {
         super();
 
-        addVertexShader(ResourceLoader.loadShader("basicVertex.vs"));
-        addFragmentShader(ResourceLoader.loadShader("basicFragment.fs"));
+        addVertexShader(ResourceLoader.loadShader("phongVertex.vs"));
+        addFragmentShader(ResourceLoader.loadShader("phongFragment.fs"));
         compileShader();
 
         addUniform("transform");

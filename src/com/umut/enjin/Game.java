@@ -29,7 +29,7 @@ public class Game {
         mesh.addVertices(vertices, indices);
 
         material = new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(0, 1, 1));
-        shader = new BasicShader();
+        shader = BasicShader.getInstance();
         camera = new Camera();
 
         transform = new Transform();
