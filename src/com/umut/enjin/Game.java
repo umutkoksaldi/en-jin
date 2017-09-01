@@ -29,12 +29,13 @@ public class Game {
         mesh.addVertices(vertices, indices);
 
         material = new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(0, 1, 1));
-        shader = BasicShader.getInstance();
+        shader = PhongShader.getInstance();
         camera = new Camera();
 
         transform = new Transform();
         transform.setProjection(70f, MainComponent.WIDTH, MainComponent.HEIGHT, 0.1f, 1000f);
         Transform.setCamera(camera);
+        PhongShader.setAmbientLight(new Vector3f(1,1,1));
 
     }
 
