@@ -14,6 +14,9 @@ public class Game {
     private Camera camera;
     private Material material;
 
+    SpotLight sLight = new SpotLight(new PointLight(new BaseLight(new Vector3f(1,0,0), 0.8f), new Attenuation(0, 0, 1), new Vector3f(-2, 0, 3), 10),
+            new Vector3f(1,1,1), 0.7f);
+
     public Game() {
         // mesh = ResourceLoader.loadMesh("cube.obj");
         mesh = new Mesh();
@@ -43,7 +46,9 @@ public class Game {
         PointLight pLight1 = new PointLight(new BaseLight(new Vector3f(1,0,0), 0.8f), new Attenuation(0, 0, 1), new Vector3f(-2, 0, 3), 10);
         PointLight pLight2 = new PointLight(new BaseLight(new Vector3f(0,0,1), 0.8f), new Attenuation(0, 0, 1), new Vector3f(2, 0, 7), 10);
 
+
         PhongShader.setPointLight(new PointLight[]{pLight1, pLight2});
+        PhongShader.setSpotLight(new SpotLight[]{sLight});
     }
 
     public void input() {
@@ -60,6 +65,10 @@ public class Game {
         transform.setTranslation(sinTemp, 0, 5);
         transform.setRotation(0, sinTemp * 180, 0);
         transform.setScale(0.7f, 0.7f, 0.7f);
+
+        // set spotlight position and direction to create flashlight effect
+        sLight.getPointLight().setPosition(camera.getPos());
+        sLight.setDirection(camera.getForward());
     }
 
     public void render() {
