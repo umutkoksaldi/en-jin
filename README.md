@@ -29,4 +29,4 @@ The repo is already set up as an IDEA project so you can use the .jar files insi
 Import the project into your preferred IDE and set the Java path to include the /native directory for your operating system.
 
 For convenience, you can run the project from the command line with:
-```-Djava.library.path=*your_path_to_native*```
+```-Djava.library.path=your_path_to_native```
