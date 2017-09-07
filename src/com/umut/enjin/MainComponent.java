@@ -112,6 +112,7 @@ public class MainComponent {
     public static void main(String[] args) {
         Window.createWindow(WIDTH, HEIGHT, TITLE);
         MainComponent game = new MainComponent();
+
         game.start();
     }
 

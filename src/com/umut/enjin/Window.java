@@ -4,16 +4,22 @@ package com.umut.enjin;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
+import org.lwjgl.opengl.ContextAttribs;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
+import org.lwjgl.opengl.PixelFormat;
 
 public class Window {
 
     public static void createWindow(int width, int height, String title) {
         Display.setTitle(title);
         try {
+            PixelFormat pixelFormat = new PixelFormat();
+            ContextAttribs contextAtrributes = new ContextAttribs(4, 1)
+                    .withForwardCompatible(true)
+                    .withProfileCore(true);
             Display.setDisplayMode(new DisplayMode(width, height));
-            Display.create();
+            Display.create(pixelFormat, contextAtrributes);
             Keyboard.create();
             Mouse.create();
         } catch (LWJGLException e) {

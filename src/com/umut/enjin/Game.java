@@ -26,7 +26,7 @@ public class Game {
                                     0,1,2,
                                     0,2,3};
 
-        mesh.addVertices(vertices, indices);
+        mesh.addVertices(vertices, indices, true);
 
         material = new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(0, 1, 1));
         shader = PhongShader.getInstance();
@@ -36,7 +36,8 @@ public class Game {
         transform.setProjection(70f, MainComponent.WIDTH, MainComponent.HEIGHT, 0.1f, 1000f);
         Transform.setCamera(camera);
         PhongShader.setAmbientLight(new Vector3f(1,1,1));
-
+        PhongShader.setDirectionalLight(new DirectionalLight(new BaseLight(new Vector3f(1,1,1), 0.8f),
+                new Vector3f(1,1,1)));
     }
 
     public void input() {
