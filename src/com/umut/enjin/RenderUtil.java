@@ -2,6 +2,7 @@ package com.umut.enjin;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL30.*;
+import static org.lwjgl.opengl.GL32.*;
 
 public class RenderUtil {
 
@@ -29,10 +30,10 @@ public class RenderUtil {
         glEnable(GL_CULL_FACE); // enable object culling
         glEnable(GL_DEPTH_TEST); // depth aware drawing
 
-        // TODO: Depth clamp
+        glEnable(GL_DEPTH_CLAMP);
 
         glEnable(GL_TEXTURE_2D);
-        glEnable(GL_FRAMEBUFFER_SRGB); // for auto gamma correction
+
     }
 
     public static void unbindTextures() {

@@ -4,6 +4,7 @@ import jdk.management.resource.ResourceContext;
 import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Resource;
+import java.awt.*;
 
 public class Game {
 
@@ -28,7 +29,7 @@ public class Game {
 
         mesh.addVertices(vertices, indices, true);
 
-        material = new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(0, 1, 1));
+        material = new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(1, 1, 1));
         shader = PhongShader.getInstance();
         camera = new Camera();
 
@@ -38,6 +39,11 @@ public class Game {
         PhongShader.setAmbientLight(new Vector3f(1,1,1));
         PhongShader.setDirectionalLight(new DirectionalLight(new BaseLight(new Vector3f(1,1,1), 0.8f),
                 new Vector3f(1,1,1)));
+
+        PointLight pLight1 = new PointLight(new BaseLight(new Vector3f(1,0,0), 0.8f), new Attenuation(0, 0, 1), new Vector3f(-2, 0, 3));
+        PointLight pLight2 = new PointLight(new BaseLight(new Vector3f(0,0,1), 0.8f), new Attenuation(0, 0, 1), new Vector3f(2, 0, 7));
+
+        PhongShader.setPointLight(new PointLight[]{pLight1, pLight2});
     }
 
     public void input() {
