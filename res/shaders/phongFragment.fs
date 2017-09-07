@@ -136,7 +136,7 @@ void main() {
     }
 
     for(int i = 0; i < MAX_SPOT_LIGHTS; i++) {
-            if(spotLights[i].base.intensity > 0)
+            if(spotLights[i].pointLight.base.intensity > 0)
                 totalLight += calcSpotLight(spotLights[i], normal);
         }
 

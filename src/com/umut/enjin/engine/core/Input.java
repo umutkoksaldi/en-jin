@@ -1,4 +1,4 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.core;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;

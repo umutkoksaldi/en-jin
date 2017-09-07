@@ -1,4 +1,4 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
 
 import static org.lwjgl.opengl.GL11.*;
 

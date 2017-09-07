@@ -1,8 +1,8 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.core;
 
+import com.umut.enjin.engine.rendering.Vertex;
 import org.lwjgl.BufferUtils;
 
-import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;

@@ -1,7 +1,10 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
+
+import com.umut.enjin.engine.core.Matrix4f;
+import com.umut.enjin.engine.core.Util;
+import com.umut.enjin.engine.core.Vector3f;
 
 import java.util.HashMap;
-import java.util.Vector;
 
 import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL32.*;

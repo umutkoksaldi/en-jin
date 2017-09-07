@@ -1,4 +1,6 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
+
+import com.umut.enjin.engine.core.Vector3f;
 
 /**
  * Created by umutkoksaldi on 9/6/17.

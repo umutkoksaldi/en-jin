@@ -1,4 +1,8 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
+
+import com.umut.enjin.engine.core.Util;
+import com.umut.enjin.engine.core.Vector3f;
+import org.lwjgl.opengl.GL15;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL15.*;
@@ -19,13 +23,20 @@ public class Mesh
         size = 0;
     }
 
+    public Mesh(Vertex[] vertices, int[] indices, boolean calcNormals) {
+        vbo = glGenBuffers(); // initialize the pointer to the mesh
+        ibo = glGenBuffers(); // initialize pointer for mesh face
+        size = 0;
+        addVertices(vertices, indices, calcNormals);
+    }
+
     public void addVertices(Vertex[] vertices, int[] indices) {
         size = indices.length; // calculate vertex size from floating point values
 
         glBindBuffer(GL_ARRAY_BUFFER, vbo); // bind the buffer so it will be rendered
 
         // set the prepared data in a vertex array provided by our util class
-        glBufferData(GL_ARRAY_BUFFER, Util.createFlippedBuffer(vertices), GL_STATIC_DRAW);
+        GL15.glBufferData(GL_ARRAY_BUFFER, Util.createFlippedBuffer(vertices), GL_STATIC_DRAW);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, Util.createFlippedBuffer(indices), GL_STATIC_DRAW);
@@ -41,7 +52,7 @@ public class Mesh
         glBindBuffer(GL_ARRAY_BUFFER, vbo); // bind the buffer so it will be rendered
 
         // set the prepared data in a vertex array provided by our util class
-        glBufferData(GL_ARRAY_BUFFER, Util.createFlippedBuffer(vertices), GL_STATIC_DRAW);
+        GL15.glBufferData(GL_ARRAY_BUFFER, Util.createFlippedBuffer(vertices), GL_STATIC_DRAW);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, Util.createFlippedBuffer(indices), GL_STATIC_DRAW);

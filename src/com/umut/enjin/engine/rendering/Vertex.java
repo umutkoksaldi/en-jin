@@ -1,4 +1,7 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
+
+import com.umut.enjin.engine.core.Vector2f;
+import com.umut.enjin.engine.core.Vector3f;
 
 /*
 Wrapper class to hold our vertex elements in order to be easily incorporated into the meshes

@@ -1,4 +1,8 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
+
+import com.umut.enjin.engine.core.Input;
+import com.umut.enjin.engine.core.Time;
+import com.umut.enjin.engine.core.Vector3f;
 
 /**
  * Created by umutm on 8/21/2017.

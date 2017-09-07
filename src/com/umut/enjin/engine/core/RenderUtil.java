@@ -1,7 +1,6 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.core;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL30.*;
 import static org.lwjgl.opengl.GL32.*;
 
 public class RenderUtil {

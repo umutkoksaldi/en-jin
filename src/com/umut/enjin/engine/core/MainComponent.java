@@ -1,8 +1,6 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.core;
 
-import org.lwjgl.opengl.Display;
-import org.newdawn.slick.opengl.GLUtils.*;
-import org.lwjgl.opengl.GL33.*;
+import com.umut.enjin.engine.rendering.Window;
 
 public class MainComponent {
 

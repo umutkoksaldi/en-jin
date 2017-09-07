@@ -1,4 +1,4 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
 
 /**
  * Created by umutkoksaldi on 9/6/17.

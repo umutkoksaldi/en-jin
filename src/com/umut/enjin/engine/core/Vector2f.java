@@ -1,6 +1,4 @@
-package com.umut.enjin;
-
-import java.util.Vector;
+package com.umut.enjin.engine.core;
 
 public class Vector2f {
 

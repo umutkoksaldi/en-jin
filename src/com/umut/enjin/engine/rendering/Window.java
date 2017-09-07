@@ -1,4 +1,4 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
 
 
 import org.lwjgl.LWJGLException;

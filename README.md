@@ -7,3 +7,4 @@ Simple 3D Game Engine written in Java
 - Transformation, rotation and scaling of 3D meshes
 - Orthographic and perspective camera angles
 - Ambient lighting
+- Point lights, spot lights, directional lighting

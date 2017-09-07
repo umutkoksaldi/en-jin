@@ -1,4 +1,4 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.core;
 
 public class Matrix4f {
     private float[][] m;

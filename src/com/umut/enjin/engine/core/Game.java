@@ -1,10 +1,6 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.core;
 
-import jdk.management.resource.ResourceContext;
-import org.lwjgl.input.Keyboard;
-
-import javax.annotation.Resource;
-import java.awt.*;
+import com.umut.enjin.engine.rendering.*;
 
 public class Game {
 
@@ -14,7 +10,7 @@ public class Game {
     private Camera camera;
     private Material material;
 
-    SpotLight sLight = new SpotLight(new PointLight(new BaseLight(new Vector3f(1,0,0), 0.8f), new Attenuation(0, 0, 1), new Vector3f(-2, 0, 3), 10),
+    SpotLight sLight = new SpotLight(new PointLight(new BaseLight(new Vector3f(1,0,0), 0.8f), new Attenuation(0, 0, 0.1f), new Vector3f(-2, 0, 3), 10),
             new Vector3f(1,1,1), 0.7f);
 
     public Game() {

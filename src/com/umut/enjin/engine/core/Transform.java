@@ -1,4 +1,6 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.core;
+
+import com.umut.enjin.engine.rendering.Camera;
 
 /* Wrapper transform class */
 public class Transform {

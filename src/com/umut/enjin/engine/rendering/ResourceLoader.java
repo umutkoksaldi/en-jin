@@ -1,5 +1,7 @@
-package com.umut.enjin;
+package com.umut.enjin.engine.rendering;
 
+import com.umut.enjin.engine.core.Util;
+import com.umut.enjin.engine.core.Vector3f;
 import org.newdawn.slick.opengl.TextureLoader;
 
 import java.io.BufferedReader;
